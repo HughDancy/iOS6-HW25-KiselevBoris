@@ -13,9 +13,13 @@
 		D85CE123289A44EF00318F7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85CE121289A44EF00318F7B /* Main.storyboard */; };
 		D85CE125289A44F000318F7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D85CE124289A44F000318F7B /* Assets.xcassets */; };
 		D85CE128289A44F000318F7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85CE126289A44F000318F7B /* LaunchScreen.storyboard */; };
+		E3DB2954FF5F02CCB0FE1001 /* Pods_iOS6_HW25_KiselevBoris.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D98AAAFB671ADD3BCAA724E /* Pods_iOS6_HW25_KiselevBoris.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D98AAAFB671ADD3BCAA724E /* Pods_iOS6_HW25_KiselevBoris.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS6_HW25_KiselevBoris.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA0890C684AAA3098AEB91B3 /* Pods-iOS6-HW25-KiselevBoris.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS6-HW25-KiselevBoris.release.xcconfig"; path = "Target Support Files/Pods-iOS6-HW25-KiselevBoris/Pods-iOS6-HW25-KiselevBoris.release.xcconfig"; sourceTree = "<group>"; };
+		AF7B0092BB1E2A12CFAA8189 /* Pods-iOS6-HW25-KiselevBoris.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS6-HW25-KiselevBoris.debug.xcconfig"; path = "Target Support Files/Pods-iOS6-HW25-KiselevBoris/Pods-iOS6-HW25-KiselevBoris.debug.xcconfig"; sourceTree = "<group>"; };
 		D85CE118289A44EF00318F7B /* iOS6-HW25-KiselevBoris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS6-HW25-KiselevBoris.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D85CE11B289A44EF00318F7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D85CE11D289A44EF00318F7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3DB2954FF5F02CCB0FE1001 /* Pods_iOS6_HW25_KiselevBoris.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		982F469071E28C2F5D11ACC5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D98AAAFB671ADD3BCAA724E /* Pods_iOS6_HW25_KiselevBoris.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9F4BC3DDB01F0990A7444E4F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF7B0092BB1E2A12CFAA8189 /* Pods-iOS6-HW25-KiselevBoris.debug.xcconfig */,
+				AA0890C684AAA3098AEB91B3 /* Pods-iOS6-HW25-KiselevBoris.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D85CE10F289A44EF00318F7B = {
 			isa = PBXGroup;
 			children = (
 				D85CE11A289A44EF00318F7B /* iOS6-HW25-KiselevBoris */,
 				D85CE119289A44EF00318F7B /* Products */,
+				9F4BC3DDB01F0990A7444E4F /* Pods */,
+				982F469071E28C2F5D11ACC5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D85CE12C289A44F000318F7B /* Build configuration list for PBXNativeTarget "iOS6-HW25-KiselevBoris" */;
 			buildPhases = (
+				E4A3E64A5153901178CD2868 /* [CP] Check Pods Manifest.lock */,
 				D85CE114289A44EF00318F7B /* Sources */,
 				D85CE115289A44EF00318F7B /* Frameworks */,
 				D85CE116289A44EF00318F7B /* Resources */,
+				E09615CEA1D3C04A3581A9CA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E09615CEA1D3C04A3581A9CA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOS6-HW25-KiselevBoris/Pods-iOS6-HW25-KiselevBoris-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOS6-HW25-KiselevBoris/Pods-iOS6-HW25-KiselevBoris-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS6-HW25-KiselevBoris/Pods-iOS6-HW25-KiselevBoris-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4A3E64A5153901178CD2868 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOS6-HW25-KiselevBoris-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D85CE114289A44EF00318F7B /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		D85CE12D289A44F000318F7B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF7B0092BB1E2A12CFAA8189 /* Pods-iOS6-HW25-KiselevBoris.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +380,7 @@
 		};
 		D85CE12E289A44F000318F7B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA0890C684AAA3098AEB91B3 /* Pods-iOS6-HW25-KiselevBoris.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
