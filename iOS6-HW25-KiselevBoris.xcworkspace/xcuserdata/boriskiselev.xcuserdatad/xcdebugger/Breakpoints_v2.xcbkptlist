@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "DA23ECCA-477A-42FF-9464-95D4EB01763E"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E464FA9C-38F9-4D70-9B04-7415DF0B645B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS6-HW25-KiselevBoris/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.Log">
+                  <ActionContent
+                     message = "print(cards)"
+                     conveyanceType = "0">
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
+            <Locations>
+               <Location
+                  uuid = "E464FA9C-38F9-4D70-9B04-7415DF0B645B - 36b40b813cccb527"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOS6_HW25_KiselevBoris.ViewController.cards.getter : Swift.Array&lt;iOS6_HW25_KiselevBoris.Card&gt;"
+                  moduleName = "iOS6-HW25-KiselevBoris"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/boriskiselev/Desktop/Swift/Projects/iOS6-HW25-KiselevBoris/iOS6-HW25-KiselevBoris/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "E464FA9C-38F9-4D70-9B04-7415DF0B645B - 323d8fe8b02e752b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOS6_HW25_KiselevBoris.ViewController.cards.setter : Swift.Array&lt;iOS6_HW25_KiselevBoris.Card&gt;"
+                  moduleName = "iOS6-HW25-KiselevBoris"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/boriskiselev/Desktop/Swift/Projects/iOS6-HW25-KiselevBoris/iOS6-HW25-KiselevBoris/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "E464FA9C-38F9-4D70-9B04-7415DF0B645B - 3089ca750c3e355a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOS6_HW25_KiselevBoris.ViewController.cards.modify : Swift.Array&lt;iOS6_HW25_KiselevBoris.Card&gt;"
+                  moduleName = "iOS6-HW25-KiselevBoris"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/boriskiselev/Desktop/Swift/Projects/iOS6-HW25-KiselevBoris/iOS6-HW25-KiselevBoris/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "E464FA9C-38F9-4D70-9B04-7415DF0B645B - 7faa255a09bf93a1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOS6_HW25_KiselevBoris.ViewController.cards.modify : Swift.Array&lt;iOS6_HW25_KiselevBoris.Card&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "iOS6-HW25-KiselevBoris"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/boriskiselev/Desktop/Swift/Projects/iOS6-HW25-KiselevBoris/iOS6-HW25-KiselevBoris/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "E464FA9C-38F9-4D70-9B04-7415DF0B645B - 86da836c5f0cf399"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOS6_HW25_KiselevBoris.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; iOS6_HW25_KiselevBoris.ViewController"
+                  moduleName = "iOS6-HW25-KiselevBoris"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/boriskiselev/Desktop/Swift/Projects/iOS6-HW25-KiselevBoris/iOS6-HW25-KiselevBoris/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "140">
+               </Location>
+               <Location
+                  uuid = "E464FA9C-38F9-4D70-9B04-7415DF0B645B - 8e78a333632e4c78"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOS6_HW25_KiselevBoris.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;iOS6_HW25_KiselevBoris.ViewController&gt;"
+                  moduleName = "iOS6-HW25-KiselevBoris"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/boriskiselev/Desktop/Swift/Projects/iOS6-HW25-KiselevBoris/iOS6-HW25-KiselevBoris/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "116">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5C450AF3-44FF-47D9-BF03-CA5E66ECCA47"
+            shouldBeEnabled = "Yes"
+            condition = " 0 == 0"
+            ignoreCount = "0"
+            continueAfterRunningActions = "Yes"
+            filePath = "iOS6-HW25-KiselevBoris/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "fetchCards()"
+            landmarkType = "7">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
+                  <ActionContent
+                     consoleCommand = "po cards.count">
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E6CDAF90-5327-4AB5-A966-E39FE04A22C2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS6-HW25-KiselevBoris/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

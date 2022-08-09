@@ -13,6 +13,8 @@
 		D85CE123289A44EF00318F7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85CE121289A44EF00318F7B /* Main.storyboard */; };
 		D85CE125289A44F000318F7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D85CE124289A44F000318F7B /* Assets.xcassets */; };
 		D85CE128289A44F000318F7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85CE126289A44F000318F7B /* LaunchScreen.storyboard */; };
+		D85CE130289A53D700318F7B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85CE12F289A53D700318F7B /* Model.swift */; };
+		D85CE132289B8E8700318F7B /* MagicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85CE131289B8E8700318F7B /* MagicCell.swift */; };
 		E3DB2954FF5F02CCB0FE1001 /* Pods_iOS6_HW25_KiselevBoris.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D98AAAFB671ADD3BCAA724E /* Pods_iOS6_HW25_KiselevBoris.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +30,8 @@
 		D85CE124289A44F000318F7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D85CE127289A44F000318F7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D85CE129289A44F000318F7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D85CE12F289A53D700318F7B /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		D85CE131289B8E8700318F7B /* MagicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +60,6 @@
 				AF7B0092BB1E2A12CFAA8189 /* Pods-iOS6-HW25-KiselevBoris.debug.xcconfig */,
 				AA0890C684AAA3098AEB91B3 /* Pods-iOS6-HW25-KiselevBoris.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -88,6 +91,8 @@
 				D85CE124289A44F000318F7B /* Assets.xcassets */,
 				D85CE126289A44F000318F7B /* LaunchScreen.storyboard */,
 				D85CE129289A44F000318F7B /* Info.plist */,
+				D85CE12F289A53D700318F7B /* Model.swift */,
+				D85CE131289B8E8700318F7B /* MagicCell.swift */,
 			);
 			path = "iOS6-HW25-KiselevBoris";
 			sourceTree = "<group>";
@@ -209,7 +214,9 @@
 			files = (
 				D85CE120289A44EF00318F7B /* ViewController.swift in Sources */,
 				D85CE11C289A44EF00318F7B /* AppDelegate.swift in Sources */,
+				D85CE132289B8E8700318F7B /* MagicCell.swift in Sources */,
 				D85CE11E289A44EF00318F7B /* SceneDelegate.swift in Sources */,
+				D85CE130289A53D700318F7B /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
