@@ -16,10 +16,18 @@ struct Card: Decodable {
     let manaCost: String
 //    var colors: [Colors]
     let type: String
-    let raity: String
+    let rarity: String
 //    var set: String
 //    var text: String
     let imageUrl: String
+    
+    enum CodingKeys: String, CodingKey {
+        case imageUrl = "image_url"
+        case name
+        case manaCost
+        case type
+        case rarity
+    }
     
 }
 

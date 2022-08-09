@@ -36,6 +36,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func fetchCards() {
         let request = AF.request("https://api.magicthegathering.io/v1/cards")
         request.responseDecodable(of: Cards.self) { (data) in
+            print(data)
             guard let card = data.value else { return }
             let cardss = card.cards
             print(data)
@@ -46,11 +47,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     
         return cards.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Magic Cell", for: indexPath) as! MagicCell
+        for card in cards {
+            cell.cardo = card
+        }
         
         return cell
     }
@@ -59,7 +64,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         table.translatesAutoresizingMaskIntoConstraints = false
         table.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 3).isActive = true
         table.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 3).isActive = true
-        table.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -3).isActive = true
+        table.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
         table.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -3).isActive = true
     }
 }
