@@ -16,12 +16,12 @@ class MagicCell: UITableViewCell {
     private var manaCost = UILabel()
     private var imageOfCard = UIImageView()
     
-    var cardo: Card? {
+    var cards: Card? {
         didSet {
-            nameOfCard.text = cardo?.name
-            manaCost.text = cardo?.manaCost
+            nameOfCard.text = cards?.name
+            manaCost.text = cards?.manaCost
             
-            guard let imageUrl = cardo?.imageUrl,
+            guard let imageUrl = cards?.imageUrl,
                   let url = URL(string: imageUrl),
                   let imageData = try? Data(contentsOf: url)
             else {
@@ -41,11 +41,11 @@ class MagicCell: UITableViewCell {
         contentView.addSubview(nameOfCard)
         contentView.addSubview(imageOfCard)
         contentView.addSubview(manaCost)
-
         
         nameOfCard.translatesAutoresizingMaskIntoConstraints = false
         nameOfCard.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 3).isActive = true
         nameOfCard.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 3).isActive = true
+        nameOfCard.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
         manaCost.translatesAutoresizingMaskIntoConstraints = false
         manaCost.topAnchor.constraint(equalTo: nameOfCard.bottomAnchor, constant: 3).isActive = true
@@ -53,7 +53,7 @@ class MagicCell: UITableViewCell {
         
         
         imageOfCard.translatesAutoresizingMaskIntoConstraints = false
-        imageOfCard.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 3).isActive = true
+        imageOfCard.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
         imageOfCard.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -3).isActive = true
         imageOfCard.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -3).isActive = true
         

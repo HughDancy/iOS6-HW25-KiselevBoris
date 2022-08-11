@@ -8,21 +8,23 @@
 import Foundation
 
 struct Cards: Decodable {
-    let cards: [Card]
+    var cards: [Card]
 }
 
 struct Card: Decodable {
-    let name: String
-    let manaCost: String
+    var name: String?
+    var manaCost: String?
 //    var colors: [Colors]
-    let type: String
-    let rarity: String
+    var type: String?
+    var rarity: String?
+    var multiverseid: Int?
 //    var set: String
 //    var text: String
-    let imageUrl: String
+    var imageUrl: String?
+  
     
     enum CodingKeys: String, CodingKey {
-        case imageUrl = "image_url"
+        case imageUrl = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=148412&type=card"
         case name
         case manaCost
         case type
