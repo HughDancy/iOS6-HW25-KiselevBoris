@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D835CCDC28A5363100E3018C /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D835CCDB28A5363100E3018C /* InformationViewController.swift */; };
 		D85CE11C289A44EF00318F7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85CE11B289A44EF00318F7B /* AppDelegate.swift */; };
-		D85CE11E289A44EF00318F7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85CE11D289A44EF00318F7B /* SceneDelegate.swift */; };
 		D85CE120289A44EF00318F7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85CE11F289A44EF00318F7B /* ViewController.swift */; };
 		D85CE123289A44EF00318F7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85CE121289A44EF00318F7B /* Main.storyboard */; };
 		D85CE125289A44F000318F7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D85CE124289A44F000318F7B /* Assets.xcassets */; };
@@ -22,9 +22,9 @@
 		9D98AAAFB671ADD3BCAA724E /* Pods_iOS6_HW25_KiselevBoris.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS6_HW25_KiselevBoris.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0890C684AAA3098AEB91B3 /* Pods-iOS6-HW25-KiselevBoris.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS6-HW25-KiselevBoris.release.xcconfig"; path = "Target Support Files/Pods-iOS6-HW25-KiselevBoris/Pods-iOS6-HW25-KiselevBoris.release.xcconfig"; sourceTree = "<group>"; };
 		AF7B0092BB1E2A12CFAA8189 /* Pods-iOS6-HW25-KiselevBoris.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS6-HW25-KiselevBoris.debug.xcconfig"; path = "Target Support Files/Pods-iOS6-HW25-KiselevBoris/Pods-iOS6-HW25-KiselevBoris.debug.xcconfig"; sourceTree = "<group>"; };
+		D835CCDB28A5363100E3018C /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		D85CE118289A44EF00318F7B /* iOS6-HW25-KiselevBoris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS6-HW25-KiselevBoris.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D85CE11B289A44EF00318F7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D85CE11D289A44EF00318F7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D85CE11F289A44EF00318F7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D85CE122289A44EF00318F7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D85CE124289A44F000318F7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,7 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				D85CE11B289A44EF00318F7B /* AppDelegate.swift */,
-				D85CE11D289A44EF00318F7B /* SceneDelegate.swift */,
 				D85CE11F289A44EF00318F7B /* ViewController.swift */,
 				D85CE121289A44EF00318F7B /* Main.storyboard */,
 				D85CE124289A44F000318F7B /* Assets.xcassets */,
@@ -93,6 +92,7 @@
 				D85CE129289A44F000318F7B /* Info.plist */,
 				D85CE12F289A53D700318F7B /* Model.swift */,
 				D85CE131289B8E8700318F7B /* MagicCell.swift */,
+				D835CCDB28A5363100E3018C /* InformationViewController.swift */,
 			);
 			path = "iOS6-HW25-KiselevBoris";
 			sourceTree = "<group>";
@@ -215,8 +215,8 @@
 				D85CE120289A44EF00318F7B /* ViewController.swift in Sources */,
 				D85CE11C289A44EF00318F7B /* AppDelegate.swift in Sources */,
 				D85CE132289B8E8700318F7B /* MagicCell.swift in Sources */,
-				D85CE11E289A44EF00318F7B /* SceneDelegate.swift in Sources */,
 				D85CE130289A53D700318F7B /* Model.swift in Sources */,
+				D835CCDC28A5363100E3018C /* InformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

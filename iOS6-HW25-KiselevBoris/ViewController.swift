@@ -17,7 +17,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchCards()
-//        fetchData()
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .always
+        title = "MTG Random Cards"
+        view.backgroundColor = UIColor(displayP3Red: 0.96, green: 0.96, blue: 0.98, alpha: 1)
         view.addSubview(table)
         table.register(MagicCell.self, forCellReuseIdentifier: "Magic Cell")
         table.delegate = self
@@ -53,8 +56,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cards.count
     }
     
-     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-         
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 65
     }
     
@@ -69,8 +71,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        content.image = getImage(url: cards[indexPath.row].imageUrl ?? "image_url")
 //        cell.contentConfiguration = content
 
-        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewC = InformationViewController()
+        viewC.view.backgroundColor = .white
+        viewC.nameOfCard.text = "Name of card - \(cards[indexPath.row].name ?? "")"
+        viewC.typeOfCard.text = "Type - \(cards[indexPath.row].type ?? "")"
+        viewC.manaCost.text = "Mana cost - \(cards[indexPath.row].manaCost ?? "")"
+        viewC.rarity.text = "Rarity - \(cards[indexPath.row].rarity ?? "")"
+        viewC.set.text = "Set - \(cards[indexPath.row].set ?? "")"
+        viewC.text.text = "Text - \(cards[indexPath.row].text ?? "")"
+        viewC.artist.text = "Artist - \(cards[indexPath.row].artist ?? "")"
+        
+        navigationController?.pushViewController(viewC, animated: true)
     }
     
     func getImage(url: String) -> UIImage? {
@@ -84,10 +99,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     func setupLayout() {
         table.translatesAutoresizingMaskIntoConstraints = false
-        table.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 1).isActive = true
-        table.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 3).isActive = true
-        table.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -1).isActive = true
-        table.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -1).isActive = true
+        table.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        table.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        table.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        table.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
 }
 
