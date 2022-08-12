@@ -8,10 +8,13 @@
 import UIKit
 
 class InformationViewController: UIViewController {
-
+    
+    // MARK: - Subview's
+    
     var nameOfCard: UILabel = {
         let nameOfCard = UILabel()
         nameOfCard.font = UIFont(name: "HelveticaNeue-Bold", size: 25)
+        nameOfCard.numberOfLines = 0
         
         return nameOfCard
     }()
@@ -26,14 +29,38 @@ class InformationViewController: UIViewController {
         return text
     }()
     var artist = UILabel()
+    var imageOfCard = UIImageView()
     
+    var cards: Card? {
+        didSet {
+            nameOfCard.text = "Name of card:  \(cards?.name ?? "")"
+            typeOfCard.text = "Type:  \(cards?.type ?? "")"
+            manaCost.text = "Mana cost:  \(cards?.manaCost ?? "")"
+            rarity.text = "Rarity:  \(cards?.rarity ?? "")"
+            set.text = "Set:  \(cards?.set ?? "")"
+            text.text = "Text:  \(cards?.text ?? "")"
+            artist.text = "Artist:  \(cards?.artist ?? "")"
+            
+            guard let imageUrl = cards?.imageUrl,
+                  let url = URL(string: imageUrl),
+                  let imageData = try? Data(contentsOf: url)
+            else {
+                imageOfCard.image = UIImage(named: "MagicBack")
+                return
+            }
+            imageOfCard.image = UIImage(data: imageData)
+        }
+    }
+    
+    // MARK: - ViewDidLoad()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubViews()
         setupLayout()
-        // Do any additional setup after loading the view.
     }
+    
+    // MARK: - Settings function's
     
     func addSubViews() {
         view.addSubview(nameOfCard)
@@ -43,12 +70,14 @@ class InformationViewController: UIViewController {
         view.addSubview(set)
         view.addSubview(text)
         view.addSubview(artist)
+        view.addSubview(imageOfCard)
     }
     
     func setupLayout() {
         nameOfCard.translatesAutoresizingMaskIntoConstraints = false
         nameOfCard.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5).isActive = true
         nameOfCard.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15).isActive = true
+        nameOfCard.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -5).isActive = true
         
         typeOfCard.translatesAutoresizingMaskIntoConstraints = false
         typeOfCard.topAnchor.constraint(equalTo: nameOfCard.safeAreaLayoutGuide.bottomAnchor, constant: 10).isActive = true
@@ -75,7 +104,14 @@ class InformationViewController: UIViewController {
         artist.topAnchor.constraint(equalTo: text.safeAreaLayoutGuide.bottomAnchor, constant: 3).isActive = true
         artist.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15).isActive = true
         
+        imageOfCard.translatesAutoresizingMaskIntoConstraints = false
+        imageOfCard.topAnchor.constraint(equalTo: artist.safeAreaLayoutGuide.bottomAnchor, constant: 10).isActive = true
+        imageOfCard.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15).isActive = true
+        imageOfCard.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -15).isActive = true
+        imageOfCard.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
     }
+    
+    // MARK: - Init
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nil, bundle: nil)

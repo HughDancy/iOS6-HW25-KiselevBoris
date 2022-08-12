@@ -12,7 +12,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var table = UITableView(frame: .zero, style: UITableView.Style.insetGrouped)
     var cards: [Card] = []
-    let simple = "hamachi_url"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,17 +25,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         table.delegate = self
         table.dataSource = self
        
-        
         setupLayout()
-        // Do any additional setup after loading the view.
     }
-
-//    func fetchData() {
-//        let request = AF.request("https://api.magicthegathering.io/v1/cards")
-//        request.responseJSON { (data) in
-//            print(data)
-//        }
-//    }
     
     func fetchCards() {
         let request = AF.request("https://api.magicthegathering.io/v1/cards")
@@ -63,13 +53,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Magic Cell", for: indexPath) as! MagicCell
         cell.cards = cards[indexPath.row]
-//        var content = cell.defaultContentConfiguration()
-//        content.text = cards[indexPath.row].name
-//        content.secondaryText = cards[indexPath.row].type
-//        print(cards[indexPath.row].multiverseid)
-////        print(cards[indexPath.row].imageUrl)
-//        content.image = getImage(url: cards[indexPath.row].imageUrl ?? "image_url")
-//        cell.contentConfiguration = content
 
         return cell
     }
@@ -77,26 +60,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewC = InformationViewController()
         viewC.view.backgroundColor = .white
-        viewC.nameOfCard.text = "Name of card - \(cards[indexPath.row].name ?? "")"
-        viewC.typeOfCard.text = "Type - \(cards[indexPath.row].type ?? "")"
-        viewC.manaCost.text = "Mana cost - \(cards[indexPath.row].manaCost ?? "")"
-        viewC.rarity.text = "Rarity - \(cards[indexPath.row].rarity ?? "")"
-        viewC.set.text = "Set - \(cards[indexPath.row].set ?? "")"
-        viewC.text.text = "Text - \(cards[indexPath.row].text ?? "")"
-        viewC.artist.text = "Artist - \(cards[indexPath.row].artist ?? "")"
+        viewC.cards = cards[indexPath.row]
         
         navigationController?.pushViewController(viewC, animated: true)
     }
     
-    func getImage(url: String) -> UIImage? {
-        if let imageUrl = URL(string: url),
-           let imageData = try? Data(contentsOf: imageUrl) {
-            return UIImage(data: imageData)
-        } else {
-            return UIImage(named: "black_brick")
-        }
-    }
-
     func setupLayout() {
         table.translatesAutoresizingMaskIntoConstraints = false
         table.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true

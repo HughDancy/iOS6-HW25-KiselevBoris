@@ -14,15 +14,13 @@ struct Cards: Decodable {
 struct Card: Decodable {
     var name: String?
     var manaCost: String?
-//    var colors: [Colors?]
+//    var colors: [Color?]
     var type: String?
     var rarity: String?
     var set: String?
     var text: String?
     var artist: String?
     var imageUrl: String?
-    
-  
     
     enum CodingKeys: String, CodingKey {
         case imageUrl = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=148412&type=card"
@@ -38,8 +36,7 @@ struct Card: Decodable {
     
 }
 
-//struct Colors: Decodable {
-//    var firstColor: String?
-//    var secondColor: String?
-//    var thirdColor: String?
+//struct Color: Decodable {
+//    var color: String
+//
 //}
