@@ -73,6 +73,8 @@ class InformationViewController: UIViewController {
         view.addSubview(imageOfCard)
     }
     
+    // MARK: - Setup Layout
+    
     func setupLayout() {
         nameOfCard.translatesAutoresizingMaskIntoConstraints = false
         nameOfCard.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5).isActive = true
@@ -109,15 +111,5 @@ class InformationViewController: UIViewController {
         imageOfCard.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15).isActive = true
         imageOfCard.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -15).isActive = true
         imageOfCard.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
-    }
-    
-    // MARK: - Init
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

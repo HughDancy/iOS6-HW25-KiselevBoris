@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class MagicCell: UITableViewCell {
+    // MARK: - Subviews
     
     static let reuseID = "Magic Cell"
     
@@ -22,10 +23,12 @@ class MagicCell: UITableViewCell {
         }
     }
     
+    // MARK: - Init
+    
     required init?(coder aDecoder: NSCoder) {
-            super.init(coder: aDecoder)
-        }
-        
+        super.init(coder: aDecoder)
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: MagicCell.reuseID)
         contentView.addSubview(nameOfCard)
@@ -40,5 +43,5 @@ class MagicCell: UITableViewCell {
         typeOfCard.topAnchor.constraint(equalTo: nameOfCard.bottomAnchor, constant: 3).isActive = true
         typeOfCard.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 3).isActive = true
         
-     }
+    }
 }

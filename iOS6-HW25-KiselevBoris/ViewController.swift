@@ -8,7 +8,9 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController {
+    
+    //MARK: - Subview's
     
     var magicUrl = "https://api.magicthegathering.io/v1/cards"
     var table = UITableView(frame: .zero, style: UITableView.Style.insetGrouped)
@@ -22,12 +24,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var searchButton: UIButton = {
         var searchButton = UIButton()
-        searchButton.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
+        searchButton.addTarget(self, action: #selector(tapButton), for: .touchDown)
         
         return searchButton
     }()
     
     var cards: [Card] = []
+    
+    // MARK: - ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,16 +39,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .always
         title = "MTG Random Cards"
+        addSubviwes()
+        configurateButton()
+        configurateTable()
+        
+        setupLayout()
+    }
+    
+    //MARK: - Settings
+    
+    func addSubviwes() {
         view.backgroundColor = UIColor(displayP3Red: 0.96, green: 0.96, blue: 0.98, alpha: 1)
         view.addSubview(table)
         view.addSubview(searchBar)
         view.addSubview(searchButton)
-        configurateButton()
+    }
+    
+    func configurateTable() {
         table.register(MagicCell.self, forCellReuseIdentifier: "Magic Cell")
         table.delegate = self
         table.dataSource = self
-       
-        setupLayout()
     }
     
     func configurateButton() {
@@ -52,24 +66,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         searchButton.configuration?.title = "Search"
     }
     
-    @objc private func tapButton() {
-        if searchBar.text?.isEmpty == false {
-            cards.removeAll()
-            magicUrl = "https://api.magicthegathering.io/v1/cards?name=\(searchBar.text ?? "")"
-            fetchCards()
-            if cards.isEmpty == true {
-                let allertController = UIAlertController(title: "Error", message: "Not found requested card. Please try again.", preferredStyle: .alert)
-                let allertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-                allertController.addAction(allertAction)
-
-                present(allertController, animated: true, completion: nil)
-            }
-        } else {
-            magicUrl = "https://api.magicthegathering.io/v1/cards"
-            fetchCards()
-        }
-}
-
+    // MARK: - Fetch Cards
     
     func fetchCards() {
         let request = AF.request(magicUrl)
@@ -84,29 +81,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.table.reloadData()
         }
     }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cards.count
+    
+    // MARK: - Button Action
+    
+    @objc private func tapButton() {
+        if searchBar.text?.isEmpty == false {
+            magicUrl = "https://api.magicthegathering.io/v1/cards?name=\(searchBar.text ?? "")"
+            DispatchQueue.main.async {
+                self.fetchCards()
+            }
+            showAlert()
+        } else {
+            magicUrl = "https://api.magicthegathering.io/v1/cards"
+            fetchCards()
+        }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 65
+    func showAlert() {
+        if cards.isEmpty == true {
+            let allertController = UIAlertController(title: "Error", message: "Not found requested card. Please try again.", preferredStyle: .alert)
+            let allertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            allertController.addAction(allertAction)
+            
+            present(allertController, animated: true, completion: nil)
+        }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Magic Cell", for: indexPath) as! MagicCell
-        cell.cards = cards[indexPath.row]
-
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewC = InformationViewController()
-        viewC.view.backgroundColor = .white
-        viewC.cards = cards[indexPath.row]
-        
-        present(viewC, animated: true)
-    }
+    // MARK: - Setup Layout
     
     func setupLayout() {
         searchBar.translatesAutoresizingMaskIntoConstraints = false
@@ -124,6 +125,34 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         table.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         table.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         table.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+    }
+}
+
+// MARK: - Table Extension
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cards.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 65
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Magic Cell", for: indexPath) as! MagicCell
+        cell.cards = cards[indexPath.row]
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewC = InformationViewController()
+        viewC.view.backgroundColor = .white
+        viewC.cards = cards[indexPath.row]
+        
+        present(viewC, animated: true)
     }
 }
 

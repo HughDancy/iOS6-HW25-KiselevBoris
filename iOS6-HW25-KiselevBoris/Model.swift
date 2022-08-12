@@ -14,7 +14,6 @@ struct Cards: Decodable {
 struct Card: Decodable {
     var name: String?
     var manaCost: String?
-//    var colors: [Color?]
     var type: String?
     var rarity: String?
     var set: String?
@@ -26,7 +25,6 @@ struct Card: Decodable {
         case imageUrl = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=148412&type=card"
         case name
         case manaCost
-//        case colors
         case type
         case rarity
         case set
@@ -36,7 +34,4 @@ struct Card: Decodable {
     
 }
 
-//struct Color: Decodable {
-//    var color: String
-//
-//}
+
