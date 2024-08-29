@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class InformationViewController: UIViewController {
     
@@ -40,15 +41,37 @@ class InformationViewController: UIViewController {
             set.text = "Set:  \(cards?.set ?? "")"
             text.text = "Text:  \(cards?.text ?? "")"
             artist.text = "Artist:  \(cards?.artist ?? "")"
-            
-            guard let imageUrl = cards?.imageUrl,
-                  let url = URL(string: imageUrl),
-                  let imageData = try? Data(contentsOf: url)
-            else {
-                imageOfCard.image = UIImage(named: "MagicBack")
+            print(" THIS IS IMAGE URL OF THIS CARD \(cards?.imageUrl)")
+
+            guard let cardUrl = cards?.imageUrl,
+                  let imageUrl = URL(string: cardUrl) else {
+                self.imageOfCard.image = UIImage(named: "MagicBack")
                 return
             }
-            imageOfCard.image = UIImage(data: imageData)
+            AF.request(imageUrl).response { response in
+                switch response.result {
+                case .success(let data):
+                    self.imageOfCard.image = UIImage(data: data!)
+                case .failure(let error):
+                    self.imageOfCard.image = UIImage(named: "MagicBack")
+                }
+            }
+//            DispatchQueue.main.async {
+//                guard let imageData = try? Data(contentsOf: imageUrl!) else {
+//                    self.imageOfCard.image = UIImage(named: "MagicBack")
+//                    return
+//                }
+//                self.imageOfCard.image = UIImage(data: imageData)
+//            }
+
+//            guard let imageUrl = cards?.imageUrl,
+//                  let url = URL(string: imageUrl),
+//                  let imageData = try? Data(contentsOf: url)
+//            else {
+//                imageOfCard.image = UIImage(named: "MagicBack")
+//                return
+//            }
+//            imageOfCard.image = UIImage(data: imageData)
         }
     }
     

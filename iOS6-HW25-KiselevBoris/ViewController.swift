@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         return searchBar
     }()
     
-    var searchButton: UIButton = {
+    lazy var searchButton: UIButton = {
         var searchButton = UIButton()
         searchButton.addTarget(self, action: #selector(tapButton), for: .touchDown)
         
@@ -72,9 +72,10 @@ class ViewController: UIViewController {
         let request = AF.request(magicUrl)
         request.responseDecodable(of: Cards.self) { data in
             guard let char = data.value else {
-                
                 return
             }
+            let imgUrl = char.cards.first?.imageUrl
+            print("WHEN load cards image URL is - \(imgUrl)")
             let cardss = char.cards
             self.cards = cardss
             
@@ -143,7 +144,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Magic Cell", for: indexPath) as! MagicCell
         cell.cards = cards[indexPath.row]
-        
+        print("For card - \(cards[indexPath.row].name) image url is - \(cards[indexPath.row].imageUrl)")
+
         return cell
     }
     

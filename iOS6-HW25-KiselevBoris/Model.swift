@@ -20,9 +20,8 @@ struct Card: Decodable {
     var text: String?
     var artist: String?
     var imageUrl: String?
-    
+
     enum CodingKeys: String, CodingKey {
-        case imageUrl = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=148412&type=card"
         case name
         case manaCost
         case type
@@ -30,6 +29,7 @@ struct Card: Decodable {
         case set
         case text
         case artist
+        case imageUrl
     }
     
 }
