@@ -35,13 +35,13 @@ class MagicCell: UITableViewCell {
         contentView.addSubview(typeOfCard)
         
         nameOfCard.translatesAutoresizingMaskIntoConstraints = false
-        nameOfCard.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 3).isActive = true
-        nameOfCard.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 3).isActive = true
+        nameOfCard.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 9).isActive = true
+        nameOfCard.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8).isActive = true
         nameOfCard.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
         typeOfCard.translatesAutoresizingMaskIntoConstraints = false
         typeOfCard.topAnchor.constraint(equalTo: nameOfCard.bottomAnchor, constant: 3).isActive = true
-        typeOfCard.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 3).isActive = true
-        
+        typeOfCard.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8).isActive = true
+        typeOfCard.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor, constant: -9).isActive = true
     }
 }
