@@ -15,7 +15,6 @@ class InformationViewController: UIViewController {
         let nameOfCard = UILabel()
         nameOfCard.font = UIFont(name: "HelveticaNeue-Bold", size: 25)
         nameOfCard.numberOfLines = 0
-        
         return nameOfCard
     }()
     var typeOfCard = UILabel()
@@ -58,7 +57,6 @@ class InformationViewController: UIViewController {
     }
     
     // MARK: - ViewDidLoad()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubViews()
@@ -66,7 +64,6 @@ class InformationViewController: UIViewController {
     }
     
     // MARK: - Settings function's
-    
     func addSubViews() {
         view.addSubview(nameOfCard)
         view.addSubview(typeOfCard)
@@ -79,7 +76,6 @@ class InformationViewController: UIViewController {
     }
     
     // MARK: - Setup Layout
-    
     func setupLayout() {
         nameOfCard.translatesAutoresizingMaskIntoConstraints = false
         nameOfCard.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5).isActive = true
