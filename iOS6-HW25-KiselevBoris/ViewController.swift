@@ -38,6 +38,7 @@ class ViewController: UIViewController {
 
     var cards: [Card] = [] {
         didSet {
+            self.cards = self.sortCards(self.cards)
             self.activityIndicator.stopAnimating()
             self.activityIndicator.isHidden = true
         }
@@ -151,15 +152,37 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Magic Cell", for: indexPath) as? MagicCell else {
             return UITableViewCell()
         }
-        cell.cards = cards[indexPath.row]
+        cell.Card = cards[indexPath.row]
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewContoller = InformationViewController()
         viewContoller.view.backgroundColor = .white
-        viewContoller.cards = cards[indexPath.row]
+        viewContoller.data = cards[indexPath.row]
         present(viewContoller, animated: true)
+    }
+}
+
+   // MARK: - Sort Method
+extension ViewController {
+    private func sortCards(_ cards: [Card]) -> [Card] {
+        var result = [Card]()
+        let count = cards.count
+        var index = 0
+
+        while index < count {
+            if index + 1 < count {
+                if cards[index].name == cards[index + 1].name {
+                    result.append(cards[index])
+                    index += 2
+                } else {
+                    result.append(cards[index])
+                    index += 1
+                }
+            }
+        }
+        return result
     }
 }
 

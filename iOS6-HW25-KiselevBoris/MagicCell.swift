@@ -10,21 +10,19 @@ import UIKit
 
 class MagicCell: UITableViewCell {
     // MARK: - Subviews
-    
     static let reuseID = "Magic Cell"
     
     private var nameOfCard = UILabel()
     private var typeOfCard = UILabel()
     
-    var cards: Card? {
+    var Card: Card? {
         didSet {
-            nameOfCard.text = cards?.name
-            typeOfCard.text = cards?.type
+            nameOfCard.text = Card?.name
+            typeOfCard.text = Card?.type
         }
     }
     
     // MARK: - Init
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }

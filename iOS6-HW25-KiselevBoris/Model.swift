@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Cards: Decodable {
+struct Cards: Decodable, Hashable {
     var cards: [Card]
 }
 
-struct Card: Decodable {
+struct Card: Decodable, Hashable {
     var name: String?
     var manaCost: String?
     var type: String?
@@ -31,7 +31,6 @@ struct Card: Decodable {
         case artist
         case imageUrl
     }
-    
 }
 
 
