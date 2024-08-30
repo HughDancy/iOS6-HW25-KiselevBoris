@@ -38,7 +38,6 @@ class ViewController: UIViewController {
 
     var cards: [Card] = [] {
         didSet {
-            self.cards = self.sortCards(self.cards)
             self.activityIndicator.stopAnimating()
             self.activityIndicator.isHidden = true
         }
@@ -56,6 +55,7 @@ class ViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .always
         title = "MTG Random Cards"
         fetchCards()
+        self.cards = sortCards(self.cards)
         setupHierarchy()
         configurateButton()
         configurateTable()
